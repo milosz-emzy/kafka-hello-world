@@ -27,6 +27,8 @@ services:
 
   factoryservice:
     build: ./factory-service
+    depends_on:
+      - broker
     container_name: factoryservice
     ports:
       - "8181:8080"
@@ -36,6 +38,8 @@ services:
 
   warehouseservice:
     build: ./warehouse-service
+    depends_on:
+      - broker
     container_name: warehouseservice
     ports:
       - "8282:8080"
